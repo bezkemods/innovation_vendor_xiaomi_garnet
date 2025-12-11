@@ -1270,16 +1270,17 @@ PRODUCT_PACKAGES += \
     libcpion \
     libcv_common \
     libcvp2_1 \
-    libdapparamstorage \
     libdataitems \
-    libdeccfg \
     libdeflicker \
     libdiag \
     libdigital-dimming \
     libdisp-aba \
     libdisplayqos \
     libdisplayskuutils \
+<<<<<<< HEAD
     libdlbdsservice \
+=======
+>>>>>>> 5b7fede (garnet: Build AOSPA dolby)
     libdlrmsc \
     libdpmqmihal \
     libdpps \
@@ -1598,9 +1599,12 @@ PRODUCT_PACKAGES += \
     sensors.touch.detect \
     sensors.ultrasoundproximity \
     libasphere \
+<<<<<<< HEAD
     libhwdap \
     libswgamedap \
     libswvqe \
+=======
+>>>>>>> 5b7fede (garnet: Build AOSPA dolby)
     vendor.display.color@1.0 \
     vendor.display.color@1.1 \
     vendor.display.color@1.2 \
@@ -1610,8 +1614,6 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.6 \
     vendor.display.color@1.7 \
     vendor.display.postproc@1.0 \
-    vendor.dolby.hardware.dms@2.0-impl \
-    vendor.dolby.hardware.dms@2.0 \
     vendor.libdpmctmgr \
     vendor.libdpmfdmgr \
     vendor.libdpmframework \
@@ -1899,7 +1901,6 @@ PRODUCT_PACKAGES += \
     android.hardware.security.keymint-service-qti \
     qcrilNrd \
     vendor.display.color@1.0-service \
-    vendor.dolby.hardware.dms@2.0-service \
     vendor.qti.camera.provider@2.7-service_64 \
     vendor.qti.esepowermanager@1.1-service \
     vendor.qti.hardware.AGMIPC@1.0-service \
