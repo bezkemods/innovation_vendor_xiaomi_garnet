@@ -32506,6 +32506,7 @@ cc_prebuilt_binary {
                 "libc",
                 "libm",
                 "libdl",
+                "libnl",
             ],
         },
     },
@@ -32516,7 +32517,6 @@ cc_prebuilt_binary {
     prefer: true,
     relative_install_path: "hw",
     soc_specific: true,
-    check_elf_files: false,
 }
 
 cc_prebuilt_binary {
