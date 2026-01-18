@@ -871,7 +871,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/garnet/proprietary/vendor/lib/libOpenCL_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOpenCL_adreno.so \
     vendor/xiaomi/garnet/proprietary/vendor/lib/libadreno_compiler_cl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libadreno_compiler_cl.so \
     vendor/xiaomi/garnet/proprietary/vendor/lib/libdmabufheap.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdmabufheap.so \
-    vendor/xiaomi/garnet/proprietary/vendor/lib64/gpu++.so:$(TARGET_COPY_OUT_VENDOR)/lib64/gpu++.so \
     vendor/xiaomi/garnet/proprietary/vendor/lib64/libOpenCL_adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libOpenCL_adreno.so \
     vendor/xiaomi/garnet/proprietary/vendor/lib64/libadreno_compiler_cl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadreno_compiler_cl.so \
     vendor/xiaomi/garnet/proprietary/vendor/lib64/libdmabufheap.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdmabufheap.so
