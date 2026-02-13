@@ -1857,6 +1857,7 @@ PRODUCT_PACKAGES += \
     uimgbamanagerlibrary \
     uimservicelibrary \
     com.android.hotwordenrollment.common.util \
+    mirilhook \
     qcrilhook \
     vendor.qti.hardware.alarm-V1.0-java \
     vendor.qti.ims.connection-V1.0-java \
