@@ -854,7 +854,20 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/garnet/proprietary/vendor/lib64/camera/fdconfigvideolite.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/fdconfigvideolite.bin \
     vendor/xiaomi/garnet/proprietary/vendor/lib64/libgamepoweroptfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgamepoweroptfeature.so \
     vendor/xiaomi/garnet/proprietary/vendor/lib64/egl/libPipeline_plugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libPipeline_plugin.so \
-    vendor/xiaomi/garnet/proprietary/vendor/lib/hw/vulkan.adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/vulkan.adreno.so
+    vendor/xiaomi/garnet/proprietary/vendor/lib/hw/vulkan.adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/vulkan.adreno.so \
+    vendor/xiaomi/garnet/proprietary/vendor/etc/permissions/android.hardware.vulkan.version-1_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_3.xml \
+    vendor/xiaomi/garnet/proprietary/vendor/etc/permissions/android.software.opengles.deqp.level.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
+    vendor/xiaomi/garnet/proprietary/vendor/etc/permissions/android.software.vulkan.deqp.level.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkadreno_app_profiles.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkadreno_app_profiles.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkadreno_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkadreno_utils.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkgsl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkgsl.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkllvm-glnext.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkllvm-glnext.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkllvm-qgl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkllvm-qgl.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/hw/vulkan.adreno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/vulkan.adreno.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkgame_enhance.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkgame_enhance.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkgamepoweroptfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkgamepoweroptfeature.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkkcl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkkcl.so \
+    vendor/xiaomi/garnet/proprietary/vendor/lib64/vlkkernelmanager.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vlkkernelmanager.so
 
 PRODUCT_PACKAGES += \
     vendor.qti.diaghal-V1-ndk \
