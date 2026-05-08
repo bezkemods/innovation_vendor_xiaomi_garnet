@@ -891,7 +891,12 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/garnet/proprietary/vendor/etc/media_profiles_parrot_v0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_parrot_v0.xml \
     vendor/xiaomi/garnet/proprietary/vendor/etc/media_profiles_parrot_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_parrot_v1.xml \
     vendor/xiaomi/garnet/proprietary/vendor/etc/media_profiles_parrot_v2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_parrot_v2.xml \
-    vendor/xiaomi/garnet/proprietary/vendor/etc/media_profiles_ravelin.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_ravelin.xml
+    vendor/xiaomi/garnet/proprietary/vendor/etc/media_profiles_ravelin.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_ravelin.xml \
+    vendor/xiaomi/garnet/proprietary/vendor/firmware/gen70900_aqe.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/gen70900_aqe.fw \
+    vendor/xiaomi/garnet/proprietary/vendor/firmware/gen70900_sqe.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/gen70900_sqe.fw \
+    vendor/xiaomi/garnet/proprietary/vendor/firmware/gen71100_gmu.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/gen71100_gmu.bin \
+    vendor/xiaomi/garnet/proprietary/vendor/firmware/gen71100_sqe.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/gen71100_sqe.fw \
+    vendor/xiaomi/garnet/proprietary/vendor/firmware/gmu_gen70900.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/gmu_gen70900.bin 
 
 PRODUCT_PACKAGES += \
     vendor.qti.diaghal-V1-ndk \
