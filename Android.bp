@@ -1109,7 +1109,6 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "liblog",
                 "libm",
-                "libpowercore",
                 "libsqlite",
                 "libtinyxml2",
                 "libutils",
@@ -1120,6 +1119,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
+    check_elf_files: false,
 }
 
 cc_prebuilt_library_shared {
