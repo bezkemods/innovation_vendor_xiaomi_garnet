@@ -85,7 +85,7 @@ echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/pl
 
 # configure input boost settings
 echo 1110000 0 0 0 0 0 0 0 > /proc/sys/walt/input_boost/input_boost_freq
-echo 200 > /proc/sys/walt/input_boost/input_boost_ms
+echo 190 > /proc/sys/walt/input_boost/input_boost_ms
 
 #MIUI ADD: Performance_BoostFramework
 echo 1958400 0 0 0 2400000 0 0 0 > /proc/sys/walt/input_boost/powerkey_input_boost_freq
@@ -106,7 +106,7 @@ echo 1 > /proc/sys/walt/sched_conservative_pl
 ProductName=`getprop ro.product.name`
 if [ "$ProductName" == "garnet" ] ; then
 	echo 25 > /proc/sys/vm/watermark_scale_factor
-	echo 120 > /proc/sys/vm/swappiness
+	echo 80 > /proc/sys/vm/swappiness
 fi
 
 # configure bus-dcvs
