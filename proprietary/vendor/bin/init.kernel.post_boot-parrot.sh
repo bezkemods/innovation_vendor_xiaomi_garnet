@@ -85,7 +85,7 @@ echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/pl
 
 # configure input boost settings
 echo 1110000 0 0 0 0 0 0 0 > /proc/sys/walt/input_boost/input_boost_freq
-echo 190 > /proc/sys/walt/input_boost/input_boost_ms
+echo 150 > /proc/sys/walt/input_boost/input_boost_ms
 
 #MIUI ADD: Performance_BoostFramework
 echo 1958400 0 0 0 2400000 0 0 0 > /proc/sys/walt/input_boost/powerkey_input_boost_freq
