@@ -48,7 +48,7 @@ function configure_zram_parameters() {
 	fi
 
 	# And enable lz4 zram compression
-	echo lz4 > /sys/block/zram0/comp_algorithm
+	echo lz4kd > /sys/block/zram0/comp_algorithm
 
 	if [ -f /sys/block/zram0/disksize ]; then
 		if [ -f /sys/block/zram0/use_dedup ]; then
