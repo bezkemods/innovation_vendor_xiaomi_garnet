@@ -52,7 +52,7 @@ function configure_zram_parameters() {
 	# And enable lz4 zram compression for Go targets.
 	low_ram=`getprop ro.config.low_ram`
 	if [ "$low_ram" == "true" ]; then
-		echo lz4 > /sys/block/zram0/comp_algorithm
+		echo lz4kd > /sys/block/zram0/comp_algorithm
 	fi
 
 	if [ -f /sys/block/zram0/disksize ]; then
@@ -159,4 +159,3 @@ case "$platformid" in
 		echo "***WARNING***: Invalid SoC ID\n\t No postboot settings applied!!\n"
 		;;
 esac
-
