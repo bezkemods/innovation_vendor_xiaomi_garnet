@@ -49,8 +49,11 @@ function configure_zram_parameters() {
 		let zRamSizeMB=4096
 	fi
 
-	# And enable lz4 zram compression
-	echo lz4 > /sys/block/zram0/comp_algorithm
+	# And enable lz4 zram compression for Go targets.
+	low_ram=`getprop ro.config.low_ram`
+	if [ "$low_ram" == "true" ]; then
+		echo lz4 > /sys/block/zram0/comp_algorithm
+	fi
 
 	if [ -f /sys/block/zram0/disksize ]; then
 		if [ -f /sys/block/zram0/use_dedup ]; then
@@ -105,7 +108,7 @@ function configure_memory_parameters() {
 	configure_zram_parameters
 	configure_read_ahead_kb_values
 
-	echo 120 > /proc/sys/vm/swappiness
+	echo 100 > /proc/sys/vm/swappiness
 
 	# Disable periodic kcompactd wakeups. We do not use THP, so having many
 	# huge pages is not as necessary.
