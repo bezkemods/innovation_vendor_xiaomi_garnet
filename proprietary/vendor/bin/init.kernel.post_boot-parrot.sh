@@ -39,16 +39,16 @@ echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
 
 # Core control parameters for gold
 echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-echo 70 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
+echo 65 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
 echo 30 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
 echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
-echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
+echo 3 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
 
 # Setting b.L scheduler parameters
-echo 70 85 > /proc/sys/walt/sched_downmigrate
-echo 80 95 > /proc/sys/walt/sched_upmigrate
-echo 80 > /proc/sys/walt/sched_group_downmigrate
-echo 90 > /proc/sys/walt/sched_group_upmigrate
+echo 68 82 > /proc/sys/walt/sched_downmigrate
+echo 78 92 > /proc/sys/walt/sched_upmigrate
+echo 82 > /proc/sys/walt/sched_group_downmigrate
+echo 95 > /proc/sys/walt/sched_group_upmigrate
 echo 2 > /proc/sys/walt/sched_window_stats_policy
 echo 1 > /proc/sys/walt/sched_walt_rotate_big_tasks
 echo 0 > /proc/sys/walt/sched_coloc_busy_hysteresis_enable_cpus
@@ -60,7 +60,7 @@ echo 0-3 > /dev/cpuset/system-background/cpus
 # Turn off scheduler boost at the end
 echo 0 > /proc/sys/walt/sched_boost
 
-# Reset the RT boost, which is 1024 (max) by default.
+# Reset the RT boost
 echo 0 > /proc/sys/kernel/sched_util_clamp_min_rt_default
 
 # configure governor settings for silver cluster
@@ -78,20 +78,19 @@ echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us
 echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/up_rate_limit_us
 echo 1190000 > /sys/devices/system/cpu/cpufreq/policy4/walt/hispeed_freq
 echo 691200 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
-echo 90 > /sys/devices/system/cpu/cpufreq/policy4/walt/hispeed_load
+echo 88 > /sys/devices/system/cpu/cpufreq/policy4/walt/hispeed_load
 echo -6 > /sys/devices/system/cpu/cpufreq/policy4/walt/boost
 echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/rtg_boost_freq
 echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/pl
 
 # configure input boost settings
 echo 1110000 0 0 0 0 0 0 0 > /proc/sys/walt/input_boost/input_boost_freq
-echo 150 > /proc/sys/walt/input_boost/input_boost_ms
+echo 140 > /proc/sys/walt/input_boost/input_boost_ms
 
-#MIUI ADD: Performance_BoostFramework
+# MIUI Performance Boost Framework
 echo 1958400 0 0 0 2400000 0 0 0 > /proc/sys/walt/input_boost/powerkey_input_boost_freq
 echo 400 > /proc/sys/walt/input_boost/powerkey_input_boost_ms
 echo 1 > /proc/sys/walt/input_boost/powerkey_sched_boost_on_input
-#END Performance_BoostFramework
 
 # colocation V3 settings
 echo 614400 > /sys/devices/system/cpu/cpufreq/policy0/walt/rtg_boost_freq
@@ -102,11 +101,11 @@ echo 20000000 > /proc/sys/walt/sched_task_unfilter_period
 # Enable conservative pl
 echo 1 > /proc/sys/walt/sched_conservative_pl
 
-# N16 set watermark_scale_factor && set swappiness 120
+# Garnet memory tuning
 ProductName=`getprop ro.product.name`
 if [ "$ProductName" == "garnet" ] ; then
 	echo 25 > /proc/sys/vm/watermark_scale_factor
-	echo 120 > /proc/sys/vm/swappiness
+	echo 90 > /proc/sys/vm/swappiness
 fi
 
 # configure bus-dcvs
@@ -124,6 +123,7 @@ do
 	elif [ ${ddr_type:4:2} == $ddr_type5 ]; then
 		echo "1720 2086 2929 3879 5931 6515 7980 12191" > $ddrbw/mbps_zones
 	fi
+
 	echo 4 > $ddrbw/sample_ms
 	echo 68 > $ddrbw/io_percent
 	echo 20 > $ddrbw/hist_memory
@@ -145,7 +145,7 @@ do
 	echo 4000 > $qosgold/ipm_ceil
 done
 
-#set s2idle as default suspend mode
+# set s2idle as default suspend mode
 echo s2idle > /sys/power/mem_sleep
 
 # Enable LPM
@@ -157,10 +157,13 @@ if [ -f /sys/devices/soc0/select_image ]; then
 	image_version+=`getprop ro.build.id`
 	image_version+=":"
 	image_version+=`getprop ro.build.version.incremental`
+
 	image_variant=`getprop ro.product.name`
 	image_variant+="-"
 	image_variant+=`getprop ro.build.type`
+
 	oem_version=`getprop ro.build.version.codename`
+
 	echo 10 > /sys/devices/soc0/select_image
 	echo $image_version > /sys/devices/soc0/image_version
 	echo $image_variant > /sys/devices/soc0/image_variant
@@ -169,6 +172,7 @@ fi
 
 # Change console log level as per console config property
 console_config=`getprop persist.vendor.console.silent.config`
+
 case "$console_config" in
 	"1")
 		echo "Enable console config to $console_config"
