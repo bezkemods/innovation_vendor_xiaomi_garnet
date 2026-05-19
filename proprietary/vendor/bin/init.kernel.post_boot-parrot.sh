@@ -39,7 +39,7 @@ echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
 
 # Core control parameters for gold
 echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-echo 60 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
+echo 62 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
 echo 30 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
 echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
 echo 3 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
@@ -78,14 +78,14 @@ echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us
 echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/up_rate_limit_us
 echo 1190000 > /sys/devices/system/cpu/cpufreq/policy4/walt/hispeed_freq
 echo 691200 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
-echo 85 > /sys/devices/system/cpu/cpufreq/policy4/walt/hispeed_load
+echo 86 > /sys/devices/system/cpu/cpufreq/policy4/walt/hispeed_load
 echo -6 > /sys/devices/system/cpu/cpufreq/policy4/walt/boost
 echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/rtg_boost_freq
 echo 0 > /sys/devices/system/cpu/cpufreq/policy4/walt/pl
 
 # configure input boost settings
 echo 1110000 0 0 0 0 0 0 0 > /proc/sys/walt/input_boost/input_boost_freq
-echo 120 > /proc/sys/walt/input_boost/input_boost_ms
+echo 130 > /proc/sys/walt/input_boost/input_boost_ms
 
 #MIUI ADD: Performance_BoostFramework
 echo 1958400 0 0 0 2400000 0 0 0 > /proc/sys/walt/input_boost/powerkey_input_boost_freq
@@ -103,11 +103,11 @@ echo 20000000 > /proc/sys/walt/sched_task_unfilter_period
 echo 1 > /proc/sys/walt/sched_conservative_pl
 
 
-# N16 set watermark_scale_factor && set swappiness 120
+# Balanced memory tuning for garnet
 ProductName=`getprop ro.product.name`
 if [ "$ProductName" == "garnet" ] ; then
-	echo 20 > /proc/sys/vm/watermark_scale_factor
-	echo 120 > /proc/sys/vm/swappiness
+	echo 22 > /proc/sys/vm/watermark_scale_factor
+	echo 100 > /proc/sys/vm/swappiness
 fi
 
 # configure bus-dcvs
