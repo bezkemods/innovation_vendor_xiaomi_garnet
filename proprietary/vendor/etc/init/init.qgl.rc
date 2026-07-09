@@ -1,6 +1,0 @@
-on post-fs-data
-    mkdir /data/vendor/gpu 0755 root root
-    copy /vendor/etc/qgl_config.txt /data/vendor/gpu/qgl_config.txt
-    chmod 0644 /data/vendor/gpu/qgl_config.txt
-    chown root root /data/vendor/gpu/qgl_config.txt
-    restorecon /data/vendor/gpu/qgl_config.txt
